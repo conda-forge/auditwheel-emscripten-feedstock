@@ -5,25 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-{{ version }}.tar.gz
   sha256: 049ba7ef502921aec655f61a69362716de3c043694c294494f73909e805bc1a4
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
     - hatch-vcs
     - hatchling
     - pip
-    - python >=3.10
+    - python {{ python_min }}
   run:
     - leb128
     - packaging
     - pyodide-cli
-    - python >=3.10
+    - python >={{ python_min }}
     - typer-slim
     - wheel
 
@@ -35,6 +36,7 @@ test:
     - pyodide auditwheel --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/auditwheel-emscripten
