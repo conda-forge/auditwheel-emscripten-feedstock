@@ -1,4 +1,4 @@
-{% set version = "0.0.16" %}
+{% set version = "0.1.0" %}
 
 package:
   name: auditwheel-emscripten
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-{{ version }}.tar.gz
-  sha256: 049ba7ef502921aec655f61a69362716de3c043694c294494f73909e805bc1a4
+  sha256: 4154acf533c348090f7acc620458e39acd5713aa5d3dbc64ad2333a571b842dc
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
