@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 0.1.0
+
+package:
+  name: auditwheel-emscripten
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-${{ version }}.tar.gz
+  sha256: 4154acf533c348090f7acc620458e39acd5713aa5d3dbc64ad2333a571b842dc
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - hatch-vcs
+    - hatchling
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - leb128
+    - packaging
+    - pyodide-cli
+    - python >=${{ python_min }}
+    - typer-slim
+    - wheel
+
+tests:
+  - python:
+      imports: auditwheel_emscripten
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - pyodide auditwheel --help
+
+about:
+  summary: auditwheel-like tool for Pyodide
+  license: MPL-2.0
+  license_file: LICENSE
+  homepage: https://pypi.org/project/auditwheel-emscripten
+  repository: https://github.com/ryanking13/auditwheel-emscripten
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
