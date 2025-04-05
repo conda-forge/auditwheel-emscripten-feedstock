@@ -13,7 +13,7 @@ source:
   sha256: 4154acf533c348090f7acc620458e39acd5713aa5d3dbc64ad2333a571b842dc
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -50,7 +50,7 @@ about:
   license: MPL-2.0
   license_file: LICENSE
   homepage: https://pypi.org/project/auditwheel-emscripten
-  repository: https://github.com/ryanking13/auditwheel-emscripten
+  repository: https://github.com/pyodide/auditwheel-emscripten
 
 extra:
   recipe-maintainers:
