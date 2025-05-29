@@ -9,7 +9,7 @@ Package license: MPL-2.0
 
 Summary: auditwheel-like tool for Pyodide
 
-Development: https://github.com/ryanking13/auditwheel-emscripten
+Development: https://github.com/pyodide/auditwheel-emscripten
 
 Current build status
 ====================
@@ -145,5 +145,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@agriyakhetarpal](https://github.com/agriyakhetarpal/)
 * [@bollwyvl](https://github.com/bollwyvl/)
 
