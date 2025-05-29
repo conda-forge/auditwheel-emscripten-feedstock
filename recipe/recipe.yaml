@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 0.1.0
+  version: "0.2.0"
 
 package:
   name: auditwheel-emscripten
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-${{ version }}.tar.gz
-  sha256: 4154acf533c348090f7acc620458e39acd5713aa5d3dbc64ad2333a571b842dc
+  sha256: 7265c26cd2638abafeba4b3c54d30511f6f777ce710df768b35aae9b38f92863
 
 build:
   number: 0
@@ -50,8 +50,9 @@ about:
   license: MPL-2.0
   license_file: LICENSE
   homepage: https://pypi.org/project/auditwheel-emscripten
-  repository: https://github.com/ryanking13/auditwheel-emscripten
+  repository: https://github.com/pyodide/auditwheel-emscripten
 
 extra:
   recipe-maintainers:
     - bollwyvl
+    - agriyakhetarpal
