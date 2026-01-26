@@ -29,7 +29,6 @@ requirements:
     - packaging
     - pyodide-cli >=0.4
     - python >=${{ python_min }}
-    - typer-slim
     - wheel
 
 tests:
