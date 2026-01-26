@@ -3,6 +3,8 @@ schema_version: 1
 
 context:
   version: "0.2.1"
+  python_min: "3.12"
+  python_check_max: "3.14"
 
 package:
   name: auditwheel-emscripten
@@ -37,7 +39,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - requirements:
       run:
         - python ${{ python_min }}.*
