@@ -27,7 +27,7 @@ requirements:
   run:
     - leb128
     - packaging
-    - pyodide-cli
+    - pyodide-cli >=0.4
     - python >=${{ python_min }}
     - typer-slim
     - wheel
