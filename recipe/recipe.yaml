@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.0"
+  version: "0.2.2"
 
 package:
   name: auditwheel-emscripten
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-${{ version }}.tar.gz
-  sha256: 7265c26cd2638abafeba4b3c54d30511f6f777ce710df768b35aae9b38f92863
+  sha256: 15c64aa3a2a467bd5e053160e85cdce30c769c5471a6433b771376951abb8c1b
 
 build:
   number: 0
