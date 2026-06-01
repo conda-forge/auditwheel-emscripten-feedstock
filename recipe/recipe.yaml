@@ -35,7 +35,10 @@ requirements:
 
 tests:
   - python:
-      imports: auditwheel_emscripten
+      imports:
+        - auditwheel_emscripten
+        - auditwheel_emscripten.cli.main
+        - auditwheel_emscripten.emscripten_tools
       pip_check: true
       python_version:
         - ${{ python_min }}.*
@@ -48,8 +51,10 @@ tests:
 
 about:
   summary: auditwheel-like tool for Pyodide
-  license: MPL-2.0
-  license_file: LICENSE
+  license: MPL-2.0 AND (MIT OR NCSA)
+  license_file:
+    - LICENSE
+    - auditwheel_emscripten/emscripten_tools/LICENSE
   homepage: https://pypi.org/project/auditwheel-emscripten
   repository: https://github.com/pyodide/auditwheel-emscripten
 
