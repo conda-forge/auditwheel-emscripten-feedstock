@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/auditwheel-emsc
 
 Home: https://pypi.org/project/auditwheel-emscripten
 
-Package license: MPL-2.0
+Package license: MPL-2.0 AND (MIT OR NCSA)
 
 Summary: auditwheel-like tool for Pyodide
 
@@ -18,7 +18,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/auditwheel-emscripten-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/auditwheel-emscripten-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>

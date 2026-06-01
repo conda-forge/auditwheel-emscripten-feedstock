@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.4"
+  version: "0.2.5"
   python_min: "3.12"
   python_check_max: "3.14"
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-${{ version }}.tar.gz
-  sha256: 4553d646791afc1224d10119c978ce3fce8c53558d63bf49439a3f544b6040e6
+  sha256: 183706b60570844913d4039140c95d4914cfa56b8f8afbc5ee53eaefa5056ea9
 
 build:
   number: 0
@@ -35,7 +35,10 @@ requirements:
 
 tests:
   - python:
-      imports: auditwheel_emscripten
+      imports:
+        - auditwheel_emscripten
+        - auditwheel_emscripten.cli.main
+        - auditwheel_emscripten.emscripten_tools
       pip_check: true
       python_version:
         - ${{ python_min }}.*
@@ -48,8 +51,10 @@ tests:
 
 about:
   summary: auditwheel-like tool for Pyodide
-  license: MPL-2.0
-  license_file: LICENSE
+  license: MPL-2.0 AND (MIT OR NCSA)
+  license_file:
+    - LICENSE
+    - auditwheel_emscripten/emscripten_tools/LICENSE
   homepage: https://pypi.org/project/auditwheel-emscripten
   repository: https://github.com/pyodide/auditwheel-emscripten
 
