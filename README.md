@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/auditwheel-emsc
 
 Home: https://pypi.org/project/auditwheel-emscripten
 
-Package license: MPL-2.0
+Package license: MPL-2.0 AND (MIT OR NCSA)
 
 Summary: auditwheel-like tool for Pyodide
 
