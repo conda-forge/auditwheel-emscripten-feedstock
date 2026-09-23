@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.5"
+  version: "0.3.0"
   python_min: "3.12"
   python_check_max: "3.14"
 
@@ -11,14 +11,14 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-${{ version }}.tar.gz
-  sha256: 183706b60570844913d4039140c95d4914cfa56b8f8afbc5ee53eaefa5056ea9
+  url: https://files.pythonhosted.org/packages/source/a/auditwheel-emscripten/auditwheel_emscripten-${{ version }}.tar.gz
+  sha256: a58fbd4adc7573548146ea64e73b3f603cbb52c7f9269cdf711818c0e9d69854
 
 build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -34,6 +34,11 @@ requirements:
     - wheel
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - auditwheel_emscripten/**
+        - auditwheel_emscripten-${{ version }}.dist-info/**
   - python:
       imports:
         - auditwheel_emscripten
